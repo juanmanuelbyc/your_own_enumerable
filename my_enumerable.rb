@@ -8,4 +8,14 @@ module MyEnumerable
         end
         return true
     end
+
+    def any?
+        for i in 0...@list.length do
+            result = yield(@list[i])
+            if(result == true)
+                return true
+            end
+        end
+        return false
+    end
 end
