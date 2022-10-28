@@ -18,4 +18,17 @@ module MyEnumerable
         end
         return false
     end
+
+    def filter 
+        result = []
+        for i in 0...@list.length do
+            response = yield(@list[i])
+            if(response == true)
+                result.push(@list[i])
+            end
+        end
+
+        return result
+    end
 end
+
